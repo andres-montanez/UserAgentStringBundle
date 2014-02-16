@@ -18,5 +18,6 @@
     },
     "autoload": {
         "psr-0": { "AndresMontanez\\UserAgentStringBundle": "" }
-    }
+    },
+    "target-dir": "AndresMontanez/UserAgentStringBundle"
 }
