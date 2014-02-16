@@ -68,6 +68,33 @@ class UserAgent
         return in_array($this->getDeviceId(), array(self::DEVICE_SMARTPHONE, self::DEVICE_TABLET, self::DEVICE_WERABLE, self::DEVICE_PDA));
     }
 
+    public function isIphone()
+    {
+    	if ($this->isPhone() && $this->getOperatingSystemFamily() == 'iOS') {
+    		return true;
+    	}
+
+    	return false;
+    }
+
+    public function isIpad()
+    {
+    	if ($this->isTablet() && $this->getOperatingSystemFamily() == 'iOS') {
+    		return true;
+    	}
+
+    	return false;
+    }
+
+    public function isAndroid()
+    {
+    	if ($this->isMobile() && $this->getOperatingSystemFamily() == 'Android') {
+    		return true;
+    	}
+
+    	return false;
+    }
+
     public function getType()
     {
         return $this->type;

@@ -197,4 +197,67 @@ class UserAgentService
         return $this->currentUserAgent;
     }
 
+    /**
+     * Check if current UserAgent is from a Desktop
+     * @return boolean
+     */
+    public function isDesktop()
+    {
+    	return $this->getCurrent()->isDesktop();
+    }
+
+    /**
+     * Check if current UserAgent is from a Phone or Smartphone
+     * @return boolean
+     */
+    public function isPhone()
+    {
+    	return $this->getCurrent()->isPhone();
+    }
+
+    /**
+     * Check if current UserAgent is from a Tablet
+     * @return boolean
+     */
+    public function isTablet()
+    {
+    	return $this->getCurrent()->isTablet();
+    }
+
+    /**
+     * Check if current UserAgent is from a Mobile Device
+     * @return boolean
+     */
+    public function isMobile()
+    {
+    	return $this->getCurrent()->isMobile();
+    }
+
+    /**
+     * Check if current UserAgent is from an Apple iPhone
+     * @return boolean
+     */
+    public function isIphone()
+    {
+    	return $this->getCurrent()->isIphone();
+    }
+
+    /**
+     * Check if current UserAgent is from an Apple iPad
+     * @return boolean
+     */
+    public function isIpad()
+    {
+    	return $this->getCurrent()->isIpad();
+    }
+
+    /**
+     * Check if current UserAgent is from an Android
+     * @return boolean
+     */
+    public function isAndroid()
+    {
+    	return $this->getCurrent()->isAndroid();
+    }
+
 }
