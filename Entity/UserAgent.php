@@ -277,12 +277,6 @@ class UserAgent
         return $this;
     }
 
-    public function setDeviceInfoUrl($deviceInfoUrl)
-    {
-    	$this->deviceInfoUrl = $deviceInfoUrl;
-    	return $this;
-    }
-
     public function getDeviceInfoUrl()
     {
         return 'http://user-agent-string.info' . $this->deviceInfoUrl;
