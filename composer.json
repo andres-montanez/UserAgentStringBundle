@@ -1,0 +1,23 @@
+{
+    "name": "andres-montanez/useragentstring-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 bundle for integrating UserAgentString",
+    "keywords": ["user agent", "detection"],
+    "homepage": "https://github.com/andres-montanez/UserAgentStringBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrés Montañez",
+            "email": "andres@andresmontanez.com",
+            "homepage": "http://andresmontanez.com"
+        }
+    ],
+    "require": {
+        "php":                       ">=5.3.3",
+        "symfony/framework-bundle":  ">=2.4.0"
+    },
+    "autoload": {
+        "psr-0": { "AndresMontanez\\UserAgentStringBundle": "" }
+    },
+    "target-dir": "andres-montanez/AndresMontanez/UserAgentStringBundle"
+}

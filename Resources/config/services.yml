@@ -1,0 +1,22 @@
+parameters:
+    andres_montanez_user_agent_string.user_agent.class: AndresMontanez\UserAgentStringBundle\Service\UserAgentService
+    andres_montanez_user_agent_string.user_agent_loader.class: AndresMontanez\UserAgentStringBundle\Service\UserAgentLoaderService
+    andres_montanez_user_agent_string.user_agent_loader_warmer.class: AndresMontanez\UserAgentStringBundle\CacheWarmer\UserAgentLoaderWarmer
+
+services:
+    andres_montanez_user_agent_string.user_agent_loader:
+        class: %andres_montanez_user_agent_string.user_agent_loader.class%
+        arguments: [%kernel.cache_dir%, %kernel.debug%, @logger]
+        
+    andres_montanez_user_agent_string.user_agent_loader_warmer:
+        class: %andres_montanez_user_agent_string.user_agent_loader_warmer.class%
+        arguments: [@andres_montanez_user_agent_string.user_agent_loader, %andres_montanez_user_agent_string.source_file%, %andres_montanez_user_agent_string.parse_robots%]
+        tags:
+          - { name: kernel.cache_warmer }
+
+    andres_montanez_user_agent_string.user_agent:
+        class: %andres_montanez_user_agent_string.user_agent.class%
+        arguments: [@request_stack, @andres_montanez_user_agent_string.user_agent_loader, %andres_montanez_user_agent_string.source_file%, %andres_montanez_user_agent_string.parse_robots%]
+        
+    user_agent:
+        alias: andres_montanez_user_agent_string.user_agent
