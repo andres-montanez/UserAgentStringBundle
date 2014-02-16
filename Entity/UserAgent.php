@@ -17,14 +17,14 @@ namespace AndresMontanez\UserAgentStringBundle\Entity;
  */
 class UserAgent
 {
-	const DEVICE_OTHER = 1;
-	const DEVICE_DESKTOP = 2;
-	const DEVICE_SMARTPHONE = 3;
-	const DEVICE_TABLET = 4;
-	const DEVICE_GAME_CONSOLE = 5;
-	const DEVICE_SMART_TV = 6;
-	const DEVICE_PDA = 7;
-	const DEVICE_WERABLE = 8;
+    const DEVICE_OTHER = 1;
+    const DEVICE_DESKTOP = 2;
+    const DEVICE_SMARTPHONE = 3;
+    const DEVICE_TABLET = 4;
+    const DEVICE_GAME_CONSOLE = 5;
+    const DEVICE_SMART_TV = 6;
+    const DEVICE_PDA = 7;
+    const DEVICE_WERABLE = 8;
 
     protected $type;
     protected $family;
@@ -49,23 +49,23 @@ class UserAgent
 
     public function isDesktop()
     {
-    	return ($this->getDeviceId() == self::DEVICE_DESKTOP);
+        return ($this->getDeviceId() == self::DEVICE_DESKTOP);
     }
 
     public function isPhone()
     {
-    	return ($this->getDeviceId() == self::DEVICE_SMARTPHONE);
+        return ($this->getDeviceId() == self::DEVICE_SMARTPHONE);
 
     }
 
     public function isTablet()
     {
-    	return in_array($this->getDeviceId(), array(self::DEVICE_TABLET, self::DEVICE_PDA));
+        return in_array($this->getDeviceId(), array(self::DEVICE_TABLET, self::DEVICE_PDA));
     }
 
     public function isMobile()
     {
-    	return in_array($this->getDeviceId(), array(self::DEVICE_SMARTPHONE, self::DEVICE_TABLET, self::DEVICE_WERABLE, self::DEVICE_PDA));
+        return in_array($this->getDeviceId(), array(self::DEVICE_SMARTPHONE, self::DEVICE_TABLET, self::DEVICE_WERABLE, self::DEVICE_PDA));
     }
 
     public function getType()
@@ -76,6 +76,7 @@ class UserAgent
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -87,6 +88,7 @@ class UserAgent
     public function setFamily($family)
     {
         $this->family = $family;
+
         return $this;
     }
 
@@ -98,6 +100,7 @@ class UserAgent
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -109,6 +112,7 @@ class UserAgent
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
@@ -120,6 +124,7 @@ class UserAgent
     public function setUrl($url)
     {
         $this->url = $url;
+
         return $this;
     }
 
@@ -131,6 +136,7 @@ class UserAgent
     public function setCompany($company)
     {
         $this->company = $company;
+
         return $this;
     }
 
@@ -142,6 +148,7 @@ class UserAgent
     public function setCompanyUrl($companyUrl)
     {
         $this->companyUrl = $companyUrl;
+
         return $this;
     }
 
@@ -153,6 +160,7 @@ class UserAgent
     public function setIcon($icon)
     {
         $this->icon = $icon;
+
         return $this;
     }
 
@@ -164,6 +172,7 @@ class UserAgent
     public function setInfoUrl($infoUrl)
     {
         $this->infoUrl = $infoUrl;
+
         return $this;
     }
 
@@ -175,6 +184,7 @@ class UserAgent
     public function setOperatingSystemFamily($operatingSystemFamily)
     {
         $this->operatingSystemFamily = $operatingSystemFamily;
+
         return $this;
     }
 
@@ -186,6 +196,7 @@ class UserAgent
     public function setOperatingSystemName($operatingSystemName)
     {
         $this->operatingSystemName = $operatingSystemName;
+
         return $this;
     }
 
@@ -197,6 +208,7 @@ class UserAgent
     public function setOperatingSystemUrl($operatingSystemUrl)
     {
         $this->operatingSystemUrl = $operatingSystemUrl;
+
         return $this;
     }
 
@@ -208,6 +220,7 @@ class UserAgent
     public function setOperatingSystemCompany($operatingSystemCompany)
     {
         $this->operatingSystemCompany = $operatingSystemCompany;
+
         return $this;
     }
 
@@ -219,6 +232,7 @@ class UserAgent
     public function setOperatingSystemCompanyUrl($operatingSystemCompanyUrl)
     {
         $this->operatingSystemCompanyUrl = $operatingSystemCompanyUrl;
+
         return $this;
     }
 
@@ -230,29 +244,32 @@ class UserAgent
     public function setOperatingSystemIcon($operatingSystemIcon)
     {
         $this->operatingSystemIcon = $operatingSystemIcon;
+
         return $this;
     }
 
     public function getOperatingSystemInfoUrl()
     {
-    	return 'http://user-agent-string.info' . $this->operatingSystemInfoUrl;
+        return 'http://user-agent-string.info' . $this->operatingSystemInfoUrl;
     }
 
     public function setOperatingSystemInfoUrl($operatingSystemInfoUrl)
     {
-    	$this->operatingSystemInfoUrl = $operatingSystemInfoUrl;
-    	return $this;
+        $this->operatingSystemInfoUrl = $operatingSystemInfoUrl;
+
+        return $this;
     }
 
     public function getDeviceId()
     {
-    	return $this->deviceId;
+        return $this->deviceId;
     }
 
     public function setDeviceId($deviceId)
     {
-    	$this->deviceId = $deviceId;
-    	return $this;
+        $this->deviceId = $deviceId;
+
+        return $this;
     }
 
     public function getDeviceType()
@@ -263,6 +280,7 @@ class UserAgent
     public function setDeviceType($deviceType)
     {
         $this->deviceType = $deviceType;
+
         return $this;
     }
 
@@ -274,6 +292,7 @@ class UserAgent
     public function setDeviceIcon($deviceIcon)
     {
         $this->deviceIcon = $deviceIcon;
+
         return $this;
     }
 
@@ -285,6 +304,7 @@ class UserAgent
     public function setDeviceInfoUrl($deviceInfoUrl)
     {
         $this->deviceInfoUrl = $deviceInfoUrl;
+
         return $this;
     }
 

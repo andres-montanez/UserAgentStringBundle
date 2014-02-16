@@ -22,10 +22,10 @@ use Symfony\Component\DependencyInjection\Loader;
  */
 class AndresMontanezUserAgentStringExtension extends Extension
 {
-	/**
-	 * (non-PHPdoc)
-	 * @see \Symfony\Component\DependencyInjection\Extension\ExtensionInterface::load()
-	 */
+    /**
+     * (non-PHPdoc)
+     * @see \Symfony\Component\DependencyInjection\Extension\ExtensionInterface::load()
+     */
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
