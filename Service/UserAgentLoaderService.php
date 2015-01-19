@@ -90,7 +90,7 @@ class UserAgentLoaderService
                 $versionDate = new DateTime(substr($versionDate, 0, 4) . '-' . substr($versionDate, 4, 2) . '-' . substr($versionDate, 6, 2));
                 $diff = $versionDate->diff(new \DateTime, true);
                 if ($diff->days > 60) {
-                    $this->logger->warning('Your UserAgent String File is more than two months old! Please consider to upgrade it by downloading it from: http://user-agent-string.info/. If you are using the file from the bundle, then update the bundle.');
+                    $this->logger->warning('Your UserAgent String File is more than two months old! Please consider to upgrade it by downloading it from: http://udger.com/resources. If you are using the file from the bundle, then update the bundle.');
                 }
             }
 
