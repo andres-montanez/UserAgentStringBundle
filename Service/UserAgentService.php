@@ -132,6 +132,7 @@ class UserAgentService
         }
 
         // Detect Operating System by Regular Expression
+        $osId = null;
         if (!$osFound) {
             foreach ($this->data['operating_systems_reg'] as $operatingSystemRegEx) {
                 if (@preg_match($operatingSystemRegEx['regstring'], $userAgentString)) {
@@ -142,7 +143,7 @@ class UserAgentService
         }
 
         // A valid Operating System was found
-        if ($osId) {
+        if ($osId !== null) {
             $osData = $this->data['operating_systems'][$osId];
 
             $userAgent->setOperatingSystemFamily($osData['family']);
