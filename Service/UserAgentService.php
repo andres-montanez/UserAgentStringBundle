@@ -144,15 +144,17 @@ class UserAgentService
 
         // A valid Operating System was found
         if ($osId !== null) {
-            $osData = $this->data['operating_systems'][$osId];
+            if (isset($this->data['operating_systems'][$osId])) {
+                $osData = $this->data['operating_systems'][$osId];
 
-            $userAgent->setOperatingSystemFamily($osData['family']);
-            $userAgent->setOperatingSystemName($osData['name']);
-            $userAgent->setOperatingSystemUrl($osData['url']);
-            $userAgent->setOperatingSystemCompany($osData['company']);
-            $userAgent->setOperatingSystemCompanyUrl($osData['url_company']);
-            $userAgent->setOperatingSystemIcon($osData['icon']);
-            $userAgent->setOperatingSystemInfoUrl($osData['os_info_url']);
+                $userAgent->setOperatingSystemFamily($osData['family']);
+                $userAgent->setOperatingSystemName($osData['name']);
+                $userAgent->setOperatingSystemUrl($osData['url']);
+                $userAgent->setOperatingSystemCompany($osData['company']);
+                $userAgent->setOperatingSystemCompanyUrl($osData['url_company']);
+                $userAgent->setOperatingSystemIcon($osData['icon']);
+                $userAgent->setOperatingSystemInfoUrl($osData['os_info_url']);
+            }
         }
 
         // Detect Device by Regular Expression
