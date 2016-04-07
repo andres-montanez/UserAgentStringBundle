@@ -72,10 +72,11 @@ class UserAgentService
             $userAgentHash = sha1($userAgentString);
             if (isset($this->data['robots'][$userAgentHash])) {
                 $robotData = $this->data['robots'][$userAgentHash];
+                $robotDataUrl = isset($robotData['url']) ? $robotData['url'] : '';
                 $userAgent->setType('Robot')
                           ->setFamily($robotData['family'])
                           ->setName($robotData['name'])
-                          ->setUrl($robotData['url'])
+                          ->setUrl($robotDataUrl)
                           ->setCompany($robotData['company'])
                           ->setCompanyUrl($robotData['company_url'])
                           ->setIcon($robotData['icon'])
@@ -120,15 +121,17 @@ class UserAgentService
         // Check if the Browser has a relation with an Operating System
         $osFound = false;
         if (isset($this->data['browsers_os'][$browserId])) {
-            $osFound = true;
-            $osData = $this->data['operating_systems'][$this->data['browsers_os'][$browserId]];
+            if (isset($this->data['operating_systems'][$this->data['browsers_os'][$browserId]])) {
+                $osFound = true;
+                $osData = $this->data['operating_systems'][$this->data['browsers_os'][$browserId]];
 
-            $userAgent->setOperatingSystemFamily($osData['family']);
-            $userAgent->setOperatingSystemName($osData['name']);
-            $userAgent->setOperatingSystemUrl($osData['url']);
-            $userAgent->setOperatingSystemCompany($osData['company']);
-            $userAgent->setOperatingSystemCompanyUrl($osData['url_company']);
-            $userAgent->setOperatingSystemIcon($osData['icon']);
+                $userAgent->setOperatingSystemFamily($osData['family']);
+                $userAgent->setOperatingSystemName($osData['name']);
+                $userAgent->setOperatingSystemUrl($osData['url']);
+                $userAgent->setOperatingSystemCompany($osData['company']);
+                $userAgent->setOperatingSystemCompanyUrl($osData['url_company']);
+                $userAgent->setOperatingSystemIcon($osData['icon']);
+            }
         }
 
         // Detect Operating System by Regular Expression
